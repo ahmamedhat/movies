@@ -9,12 +9,12 @@ const instance = axios.create({
     defaultInterceptors: true
 });
 
+
 instance.interceptors.request.use((request) => {
     // console.log('request', request);
     console.log('url', Config.BASE_URL);
     console.log('api', Config.API_KEY);
     console.log('images', Config.IMAGES_URL);
-    
     
     return AxiosLogger.requestLogger(request);
 });
@@ -48,5 +48,6 @@ function request(type: RequestType, url: string, body: any = {}) {
 
 
 export function fetchMovies(page: number) {
+    console.log('called');
     return request(RequestType.GET, Endpoints.MOVIES,{api_key: Config.API_KEY, page: page})
 }

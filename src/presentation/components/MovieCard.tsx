@@ -54,7 +54,7 @@ const MovieCard = (props: MovieProps) => {
               flexDirection: 'row',
               alignItems: 'center',
               marginRight: 16,
-              marginLeft: -3,
+              marginLeft: -3.5,
             }}>
             <EvilIcon name="calendar" size={28} color={Colors.COLOR_PRIMARY} />
             <Text style={{color: Colors.COLOR_OFF_WHITE, marginLeft: 2}}>
