@@ -71,12 +71,13 @@ const HomeScreen = () => {
     }
   };
 
-
   return (
     <>
       {loading && <LoadingSpinner />}
       <View style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
         <FlatList
+          initialNumToRender={2}
+          windowSize={4}
           contentContainerStyle={{paddingBottom: 80}}
           style={{width: '100%', backgroundColor: Colors.COLOR_BACKGROUND}}
           data={movies}
@@ -88,9 +89,11 @@ const HomeScreen = () => {
           onEndReached={!bottomLoader ? loadMorePosts : null}
           onEndReachedThreshold={0}
         />
-        {bottomLoader && <View style={{position: 'absolute', bottom: 30}}>
-          <ActivityIndicator size="large" color={Colors.COLOR_PRIMARY} />
-        </View>}
+        {bottomLoader && (
+          <View style={{position: 'absolute', bottom: 30}}>
+            <ActivityIndicator size="large" color={Colors.COLOR_PRIMARY} />
+          </View>
+        )}
       </View>
     </>
   );
