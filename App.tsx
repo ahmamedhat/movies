@@ -8,16 +8,12 @@
  * @format
  */
 
-import React, { useEffect } from 'react';
-import { Provider } from 'react-redux'
-import store from './src/application/redux'
+import React from 'react';
 import SplashScreen from './src/presentation/screens/Splash/Splash'
 
 const App = () => {
   return (
-    <Provider store={store}>
       <SplashScreen />
-    </Provider>
   );
 };
 

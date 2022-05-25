@@ -15,7 +15,7 @@ function MainStack() {
         component={HomeScreen}
         options={{
           headerTitle: () => (
-            <Image style={{width: 110, height: 30}} source={appHeader} />
+            <Image style={{width: 110, height: 30, alignSelf: 'center'}} source={appHeader} />
           ),
           headerLeft: () => {
             return (
