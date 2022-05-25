@@ -1,4 +1,4 @@
-package com.iken_mobile;
+package com.instabug_movies;
 
 import com.facebook.react.ReactActivity;
 
@@ -10,6 +10,6 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "iken_mobile";
+    return "instabug_movies";
   }
 }
