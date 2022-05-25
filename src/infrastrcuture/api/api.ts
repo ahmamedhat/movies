@@ -47,6 +47,6 @@ function request(type: RequestType, url: string, body: any = {}) {
 }
 
 
-export function fetchMovies(page: string) {
+export function fetchMovies(page: number) {
     return request(RequestType.GET, Endpoints.MOVIES,{api_key: Config.API_KEY, page: page})
 }
