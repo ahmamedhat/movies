@@ -1,12 +1,15 @@
-import React, {useEffect} from 'react';
-import {Text, SafeAreaView, Button} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {Text, SafeAreaView, Button, View} from 'react-native';
 import {fetchMovies} from '../../../infrastrcuture/api/api';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import LoadingSpinner from '../../components/loading/LoadingSpinner';
 
 const HomeScreen = () => {
-  const getMovies = async () => {
+  const [loading, setLoading] = useState(false);
+
+  const getMovies = async (loadSpinner: boolean = true) => {
     try {
-      // loadSpinner ? setLoading(true) : null;
+      loadSpinner ? setLoading(true) : null;
       const response = await fetchMovies('2');
       // if (currentPage == 1) {
       //   setPosts(apiPosts.data.data);
@@ -19,22 +22,24 @@ const HomeScreen = () => {
       // setRefreshing(false);
       console.log(error);
 
-      // loadSpinner ? setLoading(false) : null;
+      loadSpinner ? setLoading(false) : null;
       // setRefreshing(false);
     }
   };
 
   return (
-    <SafeAreaView
-      style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
-      <Text>Home</Text>
-      <Button title="get movies" onPress={getMovies} />
-      <Icon
-        name="plus"
-        color="gray"
-        style={{paddingStart: 5, paddingEnd: 2, paddingTop: 1.5}}
-      />
-    </SafeAreaView>
+    <>
+      {loading && <LoadingSpinner />}
+      <View style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
+        <Text>Home</Text>
+        <Button title="get movies" onPress={() => getMovies()} />
+        <Icon
+          name="plus"
+          color="gray"
+          style={{paddingStart: 5, paddingEnd: 2, paddingTop: 1.5}}
+        />
+      </View>
+    </>
   );
 };
 
