@@ -1,0 +1,11 @@
+//
+//  production.xcconfig
+//  iken_mobile
+//
+//  Created by Mustafa Ibrahim on 27/04/2021.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+#include? "tmp.xcconfig"
