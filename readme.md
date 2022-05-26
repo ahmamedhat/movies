@@ -8,7 +8,9 @@ This project is based on TypeScript. uses ```react-navigation``` for handleing n
 
 ## How to run
 
-Run this app either by using "yarn run ios" for ios devices or "yarn run android" for android devices.
+1- Run "yarn" command.
+2- Run "cd ios" then "pod install" then "cd .." (iOS only).
+3- Run this app either by using "yarn run ios" for ios devices or "yarn run android" for android devices.
 
 ## Environment
 
