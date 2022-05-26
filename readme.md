@@ -1,10 +1,14 @@
 # Project name
 
-This project is built to fetch new movies data using TMDB APIs
+This project is built to fetch new movies data using TMDB APIs.
 
 ## Getting Started
 
 This project is based on TypeScript. uses ```react-navigation``` for handleing navigation through the App. uses ```Axios``` as the networking library.
+
+## How to run
+
+Run this app either by using "yarn run ios" for ios devices or "yarn run android" for android devices.
 
 ## Environment
 
